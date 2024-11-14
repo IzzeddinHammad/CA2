@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Coffee Details {% endblock title %}
+
+{% block content %}
+
+<h1>{{coffee.name}}</h1>
+
+<br>
+
+<p>{{coffee.description}}</p>
+
+<br>
+
+<h4>€{{coffee.price}}</h4>
+
+{% endblock content %}

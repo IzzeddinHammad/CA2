@@ -1,0 +1,124 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f1e7;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+
+
+h1, h2, h3 {
+    color: #000000; /* header color */
+}
+
+/* Header Styling */
+header {
+    background-color: #b4857c;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #f3f1e7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #d8a07e;
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+}
+
+
+
+#coffee-types {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#coffee-types h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#coffee-types ul {
+    list-style-type: none;
+}
+
+#coffee-types li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f9f6f1;
+    border-radius: 6px;
+}
+
+#coffee-types h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#coffee-types p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    background-color: #4a2c2a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d8a07e;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #3d2b28;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+footer p {
+    font-size: 0.9rem;
+}

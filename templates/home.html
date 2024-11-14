@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Home Page {% endblock title %}
+
+
+{% block content %}
+
+
+
+
+<main>
+
+
+    <section id="coffee-types">
+        <h2>Available Coffee Types</h2>
+        <ul>
+            <!-- List coffee types  -->
+            {% for coffee in coffee_list_all %}
+                <li>
+                    <h3>Coffee Name : {{ coffee.name }}</h3>
+                    <br>
+                    <p> <h4>Description:</h4> {{ coffee.description }}</p>
+                    <br>
+                    <p> Price : {{ coffee.price }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Coffee Shop</p>
+</footer>
+
+{% endblock content %}
