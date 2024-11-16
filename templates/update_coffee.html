@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock title %}
+
+
+{% block content %}
+
+<h1>Update Coffee Type</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="save">
+
+    </form>
+
+{% endblock content %}

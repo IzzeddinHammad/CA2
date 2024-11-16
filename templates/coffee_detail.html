@@ -4,14 +4,14 @@
 
 {% block content %}
 
-<h1>{{coffee.name}}</h1>
+<div class="coffee-container-details">
+    <h1>{{ coffee.name }}</h1>
+    <p>{{ coffee.description }}</p>
+    <button>Order Now</button>
+</div>
 
-<br>
+<a href="{% url 'coffee_update' coffee.id%}">Update</a>
+<a href="{% url 'delete_coffee' coffee.id %}">Delete</a>
 
-<p>{{coffee.description}}</p>
-
-<br>
-
-<h4>€{{coffee.price}}</h4>
 
 {% endblock content %}

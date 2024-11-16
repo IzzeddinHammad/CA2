@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block title %} Home Page {% endblock title %}
+{% block title %} CA2 {% endblock title %}
 
 
 {% block content %}
@@ -13,20 +13,21 @@
 
 
     <section id="coffee-types">
+        <a href="{% url 'new_coffee' %}">Add New Coffee Type</a>
         <h2>Available Coffee Types</h2>
-        <ul>
-            <!-- List coffee types  -->
+        <ul class="coffee-container">
+
             {% for coffee in coffee_list_all %}
-                <li>
-                    <h3>Coffee Name : {{ coffee.name }}</h3>
-                    <br>
-                    <p> <h4>Description:</h4> {{ coffee.description }}</p>
-                    <br>
-                    <p> Price : {{ coffee.price }}</p>
+                <li class="coffee-box">
+                    <h3>Coffee Name: {{ coffee.name }}</h3>
+                    <h4 style="text-align: center;">€{{ coffee.price }}</h4>
+                    <a href="{{ coffee.get_absolute_url }}" >Further Details</a>
                 </li>
             {% endfor %}
+
         </ul>
     </section>
+
 </main>
 
 <!-- Footer Section -->

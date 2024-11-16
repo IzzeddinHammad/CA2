@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="icon" href="{% static 'images/coffee-shop-logo.png' %}">
 </head>
 
@@ -14,16 +14,16 @@
 <body>
 
     <header>
-        <h1>Welcome to Our Coffee Shop</h1>
 
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
+        <a href="/">
+            <img src="static/images/coffee-shop-logo.png" alt="" class="header-logo">
+        </a>
 
 
-            </ul>
-        </nav>
+
+
     </header>
+
     {% block content %}
 
     {% endblock content %}
