@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock title %}
+{% block content %}
+<h1>Search Results</h1>
+{% for coffee in coffee_list %}
+    <div>
+        <h3><a href="{{ cofee.get_absolute_url }}">{{ coffee.name }}</a></h3>
+        <p>coffee: {{ coffee.name }}</p>
+        <p>Price: € {{ coffee.price }}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
