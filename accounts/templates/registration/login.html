@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block metadescription %}
     Sign in and enjoy the variety coffee
@@ -9,35 +10,20 @@
 {% block content %}
     <div class="container">
         <br>
-        <h1 class="my_title text-center">Login or Create a New Account</h1>
+        <h1 class="my_title text-center">Login Page</h1>
 
         <br>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center my_custom_div">
-                <br>
-                <h2 class="my_title">New Customer?</h2>
-                <br>
-                
+
+
             </div>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Sign Up</button>
+                {{ form|crispy}}
+                <button class="btn btn-primary" type="submit">Sign Up</button>
             </form>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
-                <div>
-                    <br>
-                    <h2 class="my_title">Registered Customers Only</h2>
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit">Sign Up</button>
-                        </form>
-                    </form>
-                    <br>
-                </div>
 
-            </div>
         </div>
         <br>
     </div>
