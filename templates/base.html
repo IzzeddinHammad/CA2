@@ -61,11 +61,13 @@
          </div>
          {% if user.is_authenticated %}
 
-            <button  class="btn btn-success"><a href="{% url 'logout' %}" style="color: black; text-decoration: none; ">loggout</a></button>
-
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button class="btn btn-primary" type="submit">logout</button>
+            </form>
 
          {% else %}
-
+            <a href="{% url 'accounts:signup' %}" class="btn btn-secondary">Create New Account</a>
             <button  class="btn btn-success"><a href="{% url 'login' %}" style="color: black; text-decoration: none; ">Login in</a></button>
          {% endif %}
       </nav>
