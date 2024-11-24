@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %} {% endblock title %}
 
 
 {% block content %}
 
-<h1>Update Coffee Type</h1>
-    <form action="" method="POST">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Update Coffee Type</h1>
+    <form action="" method="POST" class="w-50 mx-auto">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="save">
-
+        {{ form|crispy }}
+        <div class="text-center">
+            <input type="submit" value="Save" class="btn btn-primary">
+        </div>
     </form>
+</div>
 
 {% endblock content %}

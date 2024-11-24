@@ -3,7 +3,7 @@ body {
     flex-direction: column; /* Stack sections vertically */
     align-items: center; /* Center content horizontally */
     justify-content: flex-start; /* Push items to the top */
-    background-color: #6F4F28;
+    background-color: #6f4f28;
 
 }
 
@@ -31,11 +31,11 @@ header {
     background-color: #f9f6f1;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 #coffee-types li:hover {
-    transform: scale(1.03); /* Slight zoom effect */
+    transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow */
 }
 

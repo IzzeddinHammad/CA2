@@ -3,15 +3,53 @@
 {% block title %} Coffee Details {% endblock title %}
 
 {% block content %}
-
 <div class="coffee-container-details">
     <h1>{{ coffee.name }}</h1>
     <p>{{ coffee.description }}</p>
     <button>Order Now</button>
 </div>
 
-<a href="{% url 'coffee_update' coffee.id%}">Update</a>
-<a href="{% url 'delete_coffee' coffee.id %}">Delete</a>
+
+{% if user.is_authenticated %}
+<style>
+    .btn-primary {
+        background-color: #4CAF50;
+        border: none;
+        transition: transform 0.2s ease-in-out;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #f44336;
+        border: none;
+        transition: transform 0.2s ease-in-out;
+        
+        color: white;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .row.container-fluid {
+        margin-top: 15px;
+    }
+</style>
+
+<div class="row container-fluid g-2 justify-content-center">
+    <div class="col-auto">
+        <a href="{% url 'coffee_update' coffee.id %}" class="btn btn-primary w-100">
+            <i class="bi bi-pencil"></i> Update
+        </a>
+    </div>
+    <div class="col-auto">
+        <a href="{% url 'delete_coffee' coffee.id %}" class="btn btn-danger w-100">
+            <i class="bi bi-trash"></i> Delete
+        </a>
+    </div>
+</div>
+{% endif %}
 
 
 {% endblock content %}

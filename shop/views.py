@@ -25,7 +25,7 @@ class CoffeeCreate(CreateView):
 class CoffeeUpdate(UpdateView):
     model = coffee
     template_name = 'update_coffee.html'
-    fields = ['price']
+    fields = ['name','description','price']
     success_url = reverse_lazy('home')
 
 
