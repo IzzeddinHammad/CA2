@@ -11,17 +11,20 @@
 
     <section id="coffee-types">
         {% if user.is_authenticated %}
-        <button class="btn btn-primary"><a href="{% url 'new_coffee' %}" style="color: black; text-decoration: none;">Add New Coffee Type</a></button>
         {% endif %}
         <h2>Available Coffee Types</h2>
         <ul class="coffee-container">
 
             {% for coffee in coffee_list_all %}
+
+            <a href="{{ coffee.get_absolute_url }}" class="coffee-link" style="text-decoration: none; color:rgb(98, 57, 57);">
                 <li class="coffee-box">
                     <h3>Coffee Name: {{ coffee.name }}</h3>
                     <h4 style="text-align: center;">€{{ coffee.price }}</h4>
-                    <a href="{{ coffee.get_absolute_url }}" >Further Details</a>
+
                 </li>
+            </a>
+
             {% endfor %}
 
         </ul>
