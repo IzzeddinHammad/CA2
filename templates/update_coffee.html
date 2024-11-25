@@ -5,9 +5,24 @@
 
 {% block content %}
 
+<style>
+    .container{
+        background-color: rgb(159, 209, 253);
+
+    }
+    #update-box{
+        background-color: aliceblue;
+        border: 1px;
+        border-radius: 20px;
+        margin: 20px;
+        padding: 20px;
+    }
+    
+</style>
+
 <div class="container mt-5">
     <h1 class="text-center mb-4">Update Coffee Type</h1>
-    <form action="" method="POST" class="w-50 mx-auto">
+    <form action="" method="POST" id="update-box" class="w-50 mx-auto">
         {% csrf_token %}
         {{ form|crispy }}
         <div class="text-center">

@@ -17,11 +17,11 @@
 
 </head>
 
-<body class="container">
+<body>
     <div class="container">
 
         <!-- Header Section -->
-        <header class="bg-light py-3" >
+        <header class="py-3" >
             <div class="container text-center">
                 <a href="/" class="d-inline-flex align-items-center">
                     <img src="{% static 'images/coffee_cup.png' %}" alt="Coffee Shop Logo" class="header-logo me-2">
@@ -30,7 +30,7 @@
         </header>
 
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,9 +66,9 @@
 
                     <!-- Authentication Links -->
                     {% if user.is_authenticated %}
-                    <form method="post" action="{% url 'logout' %}" class="ms-2">
+                    <form method="post" action="{% url 'logout' %}" class="m-2">
                         {% csrf_token %}
-                        <button type="submit">Logout</button>
+                        <button  class="btn btn-warning" type="submit">Logout</button>
                     </form>
                     {% else %}
                     <a class="btn" href="{% url 'login' %}" style="margin-left: 1rem; border: 1rem;">Account</a>

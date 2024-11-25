@@ -5,12 +5,25 @@
 
 {% block content %}
 
-<h1>Delete Coffee</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <p>Are you sure you want to delete "{{coffe.name}}" ?</p>
-        <input type="submit" value="confirm">
 
-    </form>
+
+<style>
+    .delete-box{
+        text-align: center;
+        margin-top: 100px;
+    }
+</style>
+
+
+
+    <div class="delete-box">
+        <h1>Delete Coffee</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{coffe.name}}" ?</p>
+            <input class="btn btn-danger" type="submit" value="confirm">
+
+        </form>
+    </div>
 
 {% endblock content %}

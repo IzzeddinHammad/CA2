@@ -8,14 +8,24 @@
     Login Coffee Page
 {% endblock title %}
 {% block content %}
+
+<style>
+    .row{
+        border: 1px black solid ;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px;
+        background-color:white;
+    }
+</style>
+
+
     <div class="container">
         <br>
         <h1 class="my_title ">Login Page</h1>
 
         <br>
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center my_custom_div">
-            </div>
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy}}
