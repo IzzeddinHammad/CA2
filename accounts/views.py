@@ -10,7 +10,6 @@ class SignUpView(CreateView):
     model = Customer
     form_class = CustomerCreationForm
     template_name = 'registration/signup.html'
-    success_url = reverse_lazy('login')
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
@@ -24,3 +23,6 @@ class SignUpView(CreateView):
         #post signup login
         login(self.request, self.object)
         return response # Redirect to success URL
+
+
+
