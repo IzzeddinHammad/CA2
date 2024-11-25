@@ -6,36 +6,28 @@
 
 {% block content %}
 
-<main>
+<section id="coffee-types">
+    {% if user.is_authenticated %}
+    {% endif %}
+    <h2>Available Coffee Types</h2>
+    <ul class="coffee-container">
+
+        {% for coffee in coffee_list_all %}
+
+        <a href="{{ coffee.get_absolute_url }}" class="coffee-link" style="text-decoration: none; color:rgb(98, 57, 57);">
+            <li class="coffee-box">
+                <h3>Coffee Name: {{ coffee.name }}</h3>
+                <h4 style="text-align: center;">€{{ coffee.price }}</h4>
+
+            </li>
+        </a>
+
+        {% endfor %}
+
+    </ul>
+</section>
 
 
-    <section id="coffee-types">
-        {% if user.is_authenticated %}
-        {% endif %}
-        <h2>Available Coffee Types</h2>
-        <ul class="coffee-container">
 
-            {% for coffee in coffee_list_all %}
-
-            <a href="{{ coffee.get_absolute_url }}" class="coffee-link" style="text-decoration: none; color:rgb(98, 57, 57);">
-                <li class="coffee-box">
-                    <h3>Coffee Name: {{ coffee.name }}</h3>
-                    <h4 style="text-align: center;">€{{ coffee.price }}</h4>
-
-                </li>
-            </a>
-
-            {% endfor %}
-
-        </ul>
-    </section>
-
-</main>
-
-
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 Coffee Shop</p>
-</footer>
 
 {% endblock content %}
