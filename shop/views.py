@@ -2,6 +2,7 @@ from django.views.generic import ListView , DetailView , UpdateView , CreateView
 from .models import  coffee
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
 # Create your views here.
 
 class CoffeeList(ListView):
@@ -42,5 +43,7 @@ class SearchResulutListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return coffee.objects.filter(Q (name__icontains=query) | Q (price__icontains = query))
+        return coffee.objects.filter(Q (name__icontains=query) | Q (price__icontains = query) | Q (description__icontains = query) | Q (id__icontains = query))
+
+    
 
