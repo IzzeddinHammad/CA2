@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import CoffeeList , CoffeeDetail,CoffeeCreate,CoffeeUpdate,CoffeeDelete , SearchResulutListView
 
+app_name = 'shop'
+
 urlpatterns = [
     path('',CoffeeList.as_view(),name='home'),
     path('Coffee/<uuid:pk>/',CoffeeDetail.as_view(),name='coffee_detail'),

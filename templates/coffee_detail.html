@@ -6,9 +6,8 @@
 <div class="coffee-container-details">
     <h1>{{ coffee.name }}</h1>
     <p>{{ coffee.description }}</p>
-    <button>Order Now</button>
+    <button class="btn btn-secondary"><a class="text-light" href="{% url 'cart:add_cart' coffee.id %}">Add to Cart</a></button>
 </div>
-
 
 {% if user.is_authenticated %}
 <style>

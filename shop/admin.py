@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import coffee
+from .models import Coffee
 # Register your models here.
 
-admin.site.register(coffee)
+admin.site.register(Coffee)
