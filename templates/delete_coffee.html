@@ -18,7 +18,7 @@
 
     <div class="delete-box">
         <h1>Delete Coffee</h1>
-        <form action="" method="POST">
+<form action="" method="post">
             {% csrf_token %}
             <p>Are you sure you want to delete "{{coffee.name}}" ?</p>
             <input class="btn btn-danger" type="submit" value="confirm">

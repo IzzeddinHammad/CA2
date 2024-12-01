@@ -22,7 +22,7 @@
         background-color: #f44336;
         border: none;
         transition: transform 0.2s ease-in-out;
-        
+
         color: white;
     }
 
@@ -38,12 +38,12 @@
 
 <div class="row container-fluid g-2 justify-content-center">
     <div class="col-auto">
-        <a href="{% url 'coffee_update' coffee.id %}" class="btn btn-primary w-100">
+        <a href="{% url 'shop:coffee_update' coffee.id %}" class="btn btn-primary w-100">
             <i class="bi bi-pencil"></i> Update
         </a>
     </div>
     <div class="col-auto">
-        <a href="{% url 'delete_coffee' coffee.id %}" class="btn btn-danger w-100">
+        <a href="{% url 'shop:delete_coffee' coffee.id %}" class="btn btn-danger w-100">
             <i class="bi bi-trash"></i> Delete
         </a>
     </div>

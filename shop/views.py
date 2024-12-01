@@ -9,6 +9,8 @@ from django.shortcuts import render
 def coff_list(request, category_id=None):
     coffee = Coffee.objects.filter(available=True)
 
+
+
 class CoffeeList(ListView):
     model = Coffee
     template_name = 'home.html'
@@ -47,7 +49,7 @@ class SearchResulutListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return coffee.objects.filter(Q (name__icontains=query) | Q (price__icontains = query) | Q (description__icontains = query) | Q (id__icontains = query))
+        return Coffee.objects.filter(Q (name__icontains=query) | Q (price__icontains = query) | Q (description__icontains = query) | Q (id__icontains = query))
 
-    
+
 
