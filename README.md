@@ -4,3 +4,7 @@ in the first commit i did the model , added image to the tab , did half of the C
 
 
 # There's a problem with the update and delete 
+
+X00203883 - Simonas Markas Nedzveckas
+
+I created the accounts app, added images into item cards and enhanced search features a little bit.
