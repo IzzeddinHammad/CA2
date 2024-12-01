@@ -13,3 +13,4 @@ def counter(request):
     except Cart.DoesNotExist:
         item_count = 0
     return {'item_count': item_count}
+

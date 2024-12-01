@@ -3,6 +3,8 @@
 {% block title %} {{ coffee.name }} - Details {% endblock title %}
 
 {% block content %}
+
+
 <div class="container py-5">
     <div class="row">
         <!-- Coffee Details Card -->
@@ -27,6 +29,8 @@
                            class="btn btn-primary btn-lg">
                             <i class="bi bi-cart-plus"></i> Add to Cart
                         </a>
+
+
                     </div>
 
                     {% if user.is_authenticated %}
