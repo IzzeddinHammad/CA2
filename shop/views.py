@@ -6,8 +6,11 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.shortcuts import render
 # Create your views here.
 
-def coff_list(request, category_id=None):
-    coffee = Coffee.objects.filter(available=True)
+
+
+
+# def coff_list(request, category_id=None):
+#     coffee = Coffee.objects.filter(available=True)
 
 
 
