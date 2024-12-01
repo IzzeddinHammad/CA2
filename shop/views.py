@@ -32,13 +32,14 @@ class CoffeeUpdate(UpdateView):
     model = Coffee
     template_name = 'update_coffee.html'
     fields = ['name','description','available','stock','price']
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('shop:home')
 
 
 class CoffeeDelete(DeleteView):
     model = Coffee
     template_name = 'delete_coffee.html'
-   
+    success_url = reverse_lazy('shop:home')
+
 
 
 

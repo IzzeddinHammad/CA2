@@ -1,56 +1,105 @@
 {% extends 'base.html' %}
 
-{% block title %} Coffee Details {% endblock title %}
+{% block title %} {{ coffee.name }} - Details {% endblock title %}
 
 {% block content %}
-<div class="coffee-container-details">
-    <h1>{{ coffee.name }}</h1>
-    <p>{{ coffee.description }}</p>
-    <p>{{coffee.available}}</p>
-    <p>{{coffee.stock}}</p>
-    <button class="btn btn-secondary"><a class="text-light" href="{% url 'cart:add_cart' coffee.id %}">Add to Cart</a></button>
+<div class="container py-5">
+    <div class="row">
+        <!-- Coffee Details Card -->
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="display-5 mb-4">{{ coffee.name }}</h1>
+
+                    <div class="mb-4">
+                        <p class="lead text-muted">{{ coffee.description }}</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <span class="badge {% if coffee.available %}bg-success{% else %}bg-danger{% endif %} mb-2">
+                                {{ coffee.available|yesno:"Available,Not Available" }}
+                            </span>
+                            <p class="mb-0">Stock: {{ coffee.stock }} units</p>
+                        </div>
+
+                        <a href="{% url 'cart:add_cart' coffee.id %}"
+                           class="btn btn-primary btn-lg">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </a>
+                    </div>
+
+                    {% if user.is_authenticated %}
+                    <div class="border-top pt-3 mt-3">
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a href="{% url 'shop:coffee_update' coffee.id %}"
+                               class="btn btn-outline-primary">
+                                <i class="bi bi-pencil"></i> Update
+                            </a>
+                            <a href="{% url 'shop:delete_coffee' coffee.id %}"
+                               class="btn btn-outline-danger">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-{% if user.is_authenticated %}
 <style>
-    .btn-primary {
-        background-color: #4CAF50;
+    .card {
+        border-radius: 15px;
         border: none;
         transition: transform 0.2s ease-in-out;
-        color: white;
     }
 
-    .btn-danger {
-        background-color: #f44336;
-        border: none;
-        transition: transform 0.2s ease-in-out;
+    .card:hover {
+        transform: translateY(-5px);
+    }
 
-        color: white;
+    .btn {
+        border-radius: 8px;
+        padding: 10px 20px;
+        transition: all 0.2s ease-in-out;
     }
 
     .btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .row.container-fluid {
-        margin-top: 15px;
+    .btn-primary {
+        background-color: #2563eb;
+        border: none;
+    }
+
+    .btn-outline-primary {
+        color: #2563eb;
+        border-color: #2563eb;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+    .btn-outline-danger {
+        color: #dc2626;
+        border-color: #dc2626;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc2626;
+        color: white;
+    }
+
+    .badge {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        border-radius: 6px;
     }
 </style>
-
-<div class="row container-fluid g-2 justify-content-center">
-    <div class="col-auto">
-        <a href="{% url 'shop:coffee_update' coffee.id %}" class="btn btn-primary w-100">
-            <i class="bi bi-pencil"></i> Update
-        </a>
-    </div>
-    <div class="col-auto">
-        <a href="{% url 'shop:delete_coffee' coffee.id %}" class="btn btn-danger w-100">
-            <i class="bi bi-trash"></i> Delete
-        </a>
-    </div>
-</div>
-{% endif %}
-
-
 {% endblock content %}

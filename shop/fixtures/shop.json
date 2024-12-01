@@ -1,0 +1,38 @@
+[
+  {
+    "model": "shop.coffee",
+    "pk": "7d6fd7a3-3d4e-4bbb-89dc-ac58a6a96489",
+    "fields": {
+      "name": "Testing",
+      "description": "to make accounts migration i had to delete the db.sqlite3 file and run makemigrations, likely you might have a smilar issue if you add database models, please do not forget to remake the superuser if models are not finished.",
+      "price": 99,
+      "available": true,
+      "stock": 1,
+      "cover": ""
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "e62c8c74-b8d0-4137-b20a-4931818eff14",
+    "fields": {
+      "name": "he",
+      "description": "",
+      "price": 29,
+      "available": true,
+      "stock": 10,
+      "cover": ""
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "eae4f0d1-7372-450e-8fa8-720626281897",
+    "fields": {
+      "name": "super user detail",
+      "description": "name = ca\r\npword = 123\r\nemail = test@test.test",
+      "price": 1,
+      "available": true,
+      "stock": 1,
+      "cover": ""
+    }
+  }
+]

@@ -10,6 +10,7 @@ class Coffee(models.Model):
     price = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField()
+    cover = models.ImageField(upload_to='coffee_covers/',blank=True)
 
     class Meta:
         ordering = ('name',)
