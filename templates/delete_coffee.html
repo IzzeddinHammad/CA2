@@ -1,29 +1,77 @@
 {% extends 'base.html' %}
 
-{% block title %} {% endblock title %}
-
+{% block title %}Delete Coffee{% endblock title %}
 
 {% block content %}
-
-
+<div class="delete-container">
+    <div class="delete-box">
+        <i class="bi bi-exclamation-triangle-fill warning-icon"></i>
+        <h1>Delete Coffee</h1>
+        <p class="confirmation-text">Are you sure you want to delete "{{coffee.name}}"?</p>
+        <div class="button-group">
+            <form action="" method="post" class="delete-form">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+                <a href="{{ coffee.get_absolute_url }}" class="btn btn-secondary">
+                    <i class="bi bi-x-circle"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
 
 <style>
-    .delete-box{
+    .delete-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .delete-box {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
-        margin-top: 100px;
+        max-width: 500px;
+        width: 90%;
+    }
+
+    .warning-icon {
+        font-size: 3rem;
+        color: #dc3545;
+        margin-bottom: 1rem;
+    }
+
+    .delete-box h1 {
+        color: #2c1810;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        font-family: 'Georgia', serif;
+    }
+
+    .confirmation-text {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .btn i {
+        margin-right: 0.5rem;
     }
 </style>
-
-
-
-    <div class="delete-box">
-        <h1>Delete Coffee</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            <p>Are you sure you want to delete "{{coffee.name}}" ?</p>
-            <input class="btn btn-danger" type="submit" value="confirm">
-
-        </form>
-    </div>
-
 {% endblock content %}

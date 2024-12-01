@@ -9,10 +9,6 @@ from django.shortcuts import render
 
 
 
-# def coff_list(request, category_id=None):
-#     coffee = Coffee.objects.filter(available=True)
-
-
 
 class CoffeeList(ListView):
     model = Coffee
@@ -29,20 +25,21 @@ class CoffeeDetail(DetailView):
 class CoffeeCreate(CreateView):
     model = Coffee
     template_name = 'new_coffee.html'
-    fields = ['name','description','price']
+    fields = ['name','description','available','stock','price']
 
 
 class CoffeeUpdate(UpdateView):
     model = Coffee
     template_name = 'update_coffee.html'
-    fields = ['name','description','price']
+    fields = ['name','description','available','stock','price']
     success_url = reverse_lazy('home')
 
 
 class CoffeeDelete(DeleteView):
     model = Coffee
     template_name = 'delete_coffee.html'
-    success_url = reverse_lazy('home')
+   
+
 
 
 class SearchResulutListView(ListView):

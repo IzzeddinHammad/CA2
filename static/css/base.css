@@ -101,7 +101,239 @@ footer {
     color: #fff;
     padding: 0.1rem;
     text-align: center;
-    
+
+}
+
+
+/* Animated Search Bar Styling */
+.modern-search {
+    position: relative;
+    width: 50px !important;
+    transition: width 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.modern-search:focus-within {
+    width: 300px !important;
+}
+
+.search-input {
+    border-radius: 50px !important;
+    border: 2px solid #e0e0e0 !important;
+    padding: 10px 20px !important;
+    padding-right: 45px !important;
+    background: #fff !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+    transition: all 0.4s ease !important;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+    border-color: #4a90e2 !important;
+}
+
+.search-input::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modern-search:focus-within .search-input::placeholder {
+    opacity: 1;
+}
+
+.btn-search {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 45px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #666 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.4s ease !important;
+    z-index: 2;
+}
+
+.btn-search:hover {
+    color: #4a90e2 !important;
+    transform: rotate(360deg);
+}
+
+.btn-search i {
+    font-size: 1.1rem;
+    transition: transform 0.4s ease;
+}
+
+/* Optional: Add pulse animation to search icon when not expanded */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.modern-search:not(:focus-within) .btn-search i {
+    animation: pulse 1.5s infinite;
+}
+
+/* Hover effect */
+.modern-search:not(:focus-within):hover {
+    width: 300px !important;
+}
+
+.modern-search:hover .search-input::placeholder {
+    opacity: 1;
+}
+
+
+/* Search Results Styling */
+.search-results-container {
+    padding: 2rem 0;
+}
+
+.search-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.search-count {
+    color: #666;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.coffee-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.coffee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.coffee-card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.coffee-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.coffee-card:hover .coffee-card-image img {
+    transform: scale(1.05);
+}
+
+.coffee-card-content {
+    padding: 1.5rem;
+}
+
+.coffee-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.coffee-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.coffee-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.coffee-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4a90e2;
+}
+
+.coffee-stock {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.coffee-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-view {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #357abd;
+    color: white;
+}
+
+.btn-add-cart {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: #218838;
+    color: white;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.no-results i {
+    font-size: 3rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-title {
+        font-size: 1.5rem;
+    }
+
+    .coffee-card-image {
+        height: 150px;
+    }
 }
 
 

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block content %}
+    {% if cart_items %}
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cart_item in cart_items %}
+                        <tr>
+                            <td>{{ cart_item.coffee.name }}</td>
+                            <td>{{ cart_item.quantity }}</td>
+                            <td>${{ cart_item.coffee.price }}</td>
+                            <td>${{ cart_item.coffee.price|mul:cart_item.quantity }}</td>                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-end">
+                <h4>Total: ${{ total }}</h4>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Your cart is empty</h2>
+                <a href="{% url 'shop:home' %}" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

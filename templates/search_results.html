@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Results{% endblock title %}
+
+{% block content %}
+<div class="search-results-container">
+    <h2 class="search-title">Search Results for "{{ query }}"</h2>
+
+    {% if coffees %}
+        <div class="search-count mb-4">Found {{ coffees|length }} result{{ coffees|length|pluralize }}</div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for coffee in coffees %}
+                <div class="col">
+                    <div class="coffee-card">
+                        <div class="coffee-card-image">
+                            {% if coffee.image %}
+                                <img src="{{ coffee.image.url }}" alt="{{ coffee.name }}">
+                            {% else %}
+                                <img src="{% static 'images/default-coffee.jpg' %}" alt="Default Coffee">
+                            {% endif %}
+                        </div>
+                        <div class="coffee-card-content">
+                            <h3 class="coffee-title">{{ coffee.name }}</h3>
+                            <p class="coffee-description">{{ coffee.description|truncatewords:20 }}</p>
+                            <div class="coffee-details">
+                                <span class="coffee-price">${{ coffee.price }}</span>
+                                <span class="coffee-stock">Stock: {{ coffee.stock }}</span>
+                            </div>
+                            <div class="coffee-actions">
+                                <a href="{% url 'shop:coffee_detail' coffee.id %}" class="btn btn-view">View Details</a>
+                                <a href="{% url 'cart:add_cart' coffee.id %}" class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-results">
+            <i class="bi bi-search"></i>
+            <p>No coffees found matching your search.</p>
+            <a href="{% url 'shop:home' %}" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %} 
