@@ -12,7 +12,9 @@
             <div class="card shadow-sm">
                 <div class="card-body p-4">
                     <h1 class="display-5 mb-4">{{ coffee.name }}</h1>
-
+                        {% if coffee.cover %}
+                        <img class="coffeecover" src="{{ coffee.cover.url}}" alt="{{ coffee.name }}" img {border-radius: 8px;}>
+                        {% endif %}
                     <div class="mb-4">
                         <p class="lead text-muted">{{ coffee.description }}</p>
                     </div>
