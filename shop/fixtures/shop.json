@@ -1,0 +1,110 @@
+[
+  {
+    "model": "shop.coffee",
+    "pk": "090d4c5e-9861-422f-a256-6b2bbc8c3ff1",
+    "fields": {
+      "name": "Espresso",
+      "description": "A strong and rich shot of coffee for quick energy.",
+      "price": "2.50",
+      "available": true,
+      "stock": 48,
+      "cover": "coffee_covers/L_coffee-beans-italian-espresso-37497081111.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "1b138051-d57c-46b7-a048-3b3119ebc111",
+    "fields": {
+      "name": "Cold Brew",
+      "description": "Coffee steeped in cold water for a smooth, refreshing flavor.",
+      "price": "3.80",
+      "available": true,
+      "stock": 30,
+      "cover": "coffee_covers/cold_brew1.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "33a92462-5430-48c5-bad5-053ab4009c73",
+    "fields": {
+      "name": "Iced Latte",
+      "description": "Espresso over ice with milk for a creamy refreshment.",
+      "price": "4.00",
+      "available": true,
+      "stock": 15,
+      "cover": "coffee_covers/iced_latte.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "44ea2cc6-e3bc-4cf9-90e7-7add2d2c424a",
+    "fields": {
+      "name": "Americano",
+      "description": "Espresso diluted with hot water for a milder taste.",
+      "price": "3.00",
+      "available": true,
+      "stock": 30,
+      "cover": "coffee_covers/coffee-americano1.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "52a26f16-5c24-4525-ac0f-dcfb3ea813ef",
+    "fields": {
+      "name": "Cappuccino",
+      "description": "Espresso with equal parts steamed milk and foam.",
+      "price": "4.50",
+      "available": true,
+      "stock": 15,
+      "cover": "coffee_covers/cappucino1.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "62271b67-d90d-40fa-8d4a-6022a568e096",
+    "fields": {
+      "name": "Flat White",
+      "description": "Espresso with velvety steamed milk.",
+      "price": "4.20",
+      "available": true,
+      "stock": 20,
+      "cover": "coffee_covers/flat_white_beans_bro1.png"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "d95a6b17-d009-4265-b88c-577b8cb998b8",
+    "fields": {
+      "name": "Macchiato",
+      "description": "Espresso topped with a small amount of foamed milk.",
+      "price": "3.50",
+      "available": true,
+      "stock": 20,
+      "cover": "coffee_covers/machiato_veans1.png"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "f319dc80-cffd-40f2-bd1b-c84405d551bb",
+    "fields": {
+      "name": "Latte",
+      "description": "Espresso with steamed milk and a light layer of foam.",
+      "price": "4.00",
+      "available": true,
+      "stock": 26,
+      "cover": "coffee_covers/latte_BEAAANNNZ1.jpg"
+    }
+  },
+  {
+    "model": "shop.coffee",
+    "pk": "fc15f0a3-40c1-41f6-b957-5492291b6c1c",
+    "fields": {
+      "name": "Mocha",
+      "description": "Espresso with chocolate syrup, steamed milk, and whipped cream.",
+      "price": "5.00",
+      "available": true,
+      "stock": 15,
+      "cover": "coffee_covers/mocha_beans1.jpg"
+    }
+  }
+]
