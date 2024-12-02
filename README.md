@@ -1,7 +1,5 @@
 X00219608 - Izzeddin Hammad
 
-X00219608 - Izzeddin Hammad
-
   1. CRUD
   2.  UUID
   3.  json data population
@@ -12,7 +10,7 @@ X00219608 - Izzeddin Hammad
   8.  80% of the html and css
   9.  deploying
   10.  created the database for the shop app
-
+------------------------------------------------------------
 
 X00203883 - Simonas Markas Nedzveckas
 
