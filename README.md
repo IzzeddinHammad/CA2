@@ -18,3 +18,7 @@ https://swdvca2.pythonanywhere.com/
 X00203883 - Simonas Markas Nedzveckas
 
 I created the accounts app, added images into item cards and enhanced search features a little bit.
+
+X00199349 - Eoin Teves
+
+I created 90% of the cart app
