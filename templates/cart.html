@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     {% if cart_items %}
         <div class="row">
             <div class="col-12">
@@ -24,7 +25,22 @@
                             <td>{{ cart_item.coffee.name }}</td>
                             <td>{{ cart_item.quantity }}</td>
                             <td>€{{ cart_item.coffee.price }}</td>
-                            <td>€{{ cart_item.coffee.price|mul:cart_item.quantity }}</td>                        </tr>
+                            <td>€{{ cart_item.coffee.price|mul:cart_item.quantity }}</td>
+                        </td>
+                            {% if cart_item.quantity < cart_item.product.stock %}
+                            <td>
+                            <a href="{% url 'cart:add_cart' cart_item.coffee.id %}" class="custom_a"><i class="fas fa-plus-circle custom_icon"></i></a>&nbsp;
+                            <a href="{% url 'cart:cart_remove' cart_item.coffee.id %}" class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
+                            <a href="{% url 'cart:full_remove' cart_item.coffee.id %}" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
+                            </td>
+                            {% else %}
+                            <td>
+                            &nbsp;<a href="{% url 'cart:cart_remove' cart_item.coffee.id %}" class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
+                            <a href="{% url 'cart:full_remove' cart_item.coffee.id %}" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
+                            </td>
+                        {% endif %}
+
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
